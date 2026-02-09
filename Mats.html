@@ -2645,7 +2645,7 @@
 
 /* Reduce inner spacing for list items */
 .expense-item .item-content,
-.income-item .income-item,
+.income-item .item-content,
 .reminder-item .item-content,
 .budget-item .item-content {
     gap: 3px !important;
@@ -3495,17 +3495,19 @@ body.dark-mode .reminders-list .search-box input::placeholder {
 .income-item {
   display: flex !important;
   flex-direction: row !important;
-  align-items: center !important;
-  padding: 4px 6px !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  padding: 8px 10px !important;
   border-bottom: 1px solid var(--border);
   transition: all 0.4s;
-  border-radius: 4px;
-  margin-bottom: 1px !important;
+  border-radius: 6px !important;
+  margin-bottom: 3px !important;
   background: var(--light);
-  gap: 6px !important;
-  min-height: 40px !important;
+  gap: 10px !important;
+  min-height: auto !important;
   position: relative;
 }
+
 
 .income-item:hover {
   transform: translateX(5px);
@@ -3514,10 +3516,10 @@ body.dark-mode .reminders-list .search-box input::placeholder {
 
 .income-item .item-content {
   flex: 1 !important;
-  width: auto !important;
-  min-width: 0;
+  width: 100% !important;
+  min-width: auto !important;
 }
-
+    
 .income-item .income-amount {
   font-weight: 700;
   font-size: 0.95rem !important;
@@ -3661,23 +3663,25 @@ body.dark-mode .reminders-list .search-box input::placeholder {
 .expense-item {
   display: flex !important;
   flex-direction: row !important;
-  align-items: center !important;
-  padding: 4px 6px !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  padding: 8px 10px !important;
   border-bottom: 1px solid var(--border);
   transition: all 0.4s;
-  border-radius: 4px;
-  margin-bottom: 1px !important; /* Reduced from 2px */
+  border-radius: 6px !important;
+  margin-bottom: 3px !important;
   background: var(--light);
-  gap: 6px !important; /* Reduced from gap */
-  min-height: 40px !important;
+  gap: 10px !important;
+  min-height: auto !important;
   position: relative;
 }
+
 
 /* Content takes available space */
 .expense-item .item-content {
   flex: 1 !important;
-  width: auto !important;
-  min-width: 0; /* Allows text truncation */
+  width: 100% !important;
+  min-width: auto !important;
 }
 
 /* Amount on the right */
@@ -4901,181 +4905,7 @@ body.dark-mode .main-stats-grid .stat-value.hidden::after {
   
   
   
- 
-
-
-
-
-
-
-
-
-/* Rental-specific form styling */
-.rental-fields-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-top: 10px;
-    padding: 15px;
-    background: linear-gradient(135deg, rgba(255, 152, 0, 0.05), rgba(245, 124, 0, 0.05));
-    border-radius: 10px;
-    border: 1px solid rgba(255, 152, 0, 0.2);
-}
-
-.rental-field-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.rental-field-group label {
-    color: var(--primary-dark);
-    font-weight: 600;
-    font-size: 0.85rem;
-    margin-bottom: 6px;
-}
-
-.rental-field-group input,
-.rental-field-group select {
-    padding: 10px;
-    border: 2px solid rgba(255, 152, 0, 0.3);
-    border-radius: 8px;
-    background: var(--input-bg);
-    color: var(--text-color);
-    transition: all 0.3s;
-}
-
-.rental-field-group input:focus,
-.rental-field-group select:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
-}
-
-/* Rental balance amount input styling */
-#rentalBalanceAmount {
-    margin-top: 8px;
-}
-
-/* Rental income badge */
-.source-rental-income {
-    background: linear-gradient(135deg, #ff9800, #f57c00) !important;
-    color: white !important;
-    border: 1px solid rgba(255, 152, 0, 0.3);
-}
-
-/* Rental balance display in income items */
-.rental-balance-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 2px 6px;
-    background: linear-gradient(135deg, #ffeb3b, #ffc107);
-    color: #333;
-    border-radius: 4px;
-    font-size: 0.65rem;
-    font-weight: 600;
-    margin-left: 8px;
-}
-
-/* Rental end date display */
-.rental-end-date {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 2px 6px;
-    background: rgba(255, 152, 0, 0.1);
-    color: var(--primary-dark);
-    border-radius: 4px;
-    font-size: 0.65rem;
-    margin-left: 8px;
-}
-
-/* Report styling for rental balances */
-.rental-balance-section {
-    margin-top: 15px;
-    padding: 12px;
-    background: linear-gradient(135deg, rgba(255, 152, 0, 0.05), rgba(245, 124, 0, 0.05));
-    border-radius: 8px;
-    border: 1px solid rgba(255, 152, 0, 0.2);
-}
-
-.rental-balance-header {
-    color: var(--primary-dark);
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.rental-balance-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255, 152, 0, 0.1);
-}
-
-.rental-balance-item:last-child {
-    border-bottom: none;
-}
-
-.rental-balance-month {
-    color: var(--text-color);
-    font-size: 0.8rem;
-}
-
-.rental-balance-amount {
-    color: var(--warning);
-    font-weight: 600;
-    font-size: 0.85rem;
-    font-family: 'SF Mono', 'Courier New', monospace;
-}
-
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-    .rental-fields-container {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    
-    .rental-balance-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+  
   
   
   
@@ -5653,82 +5483,99 @@ body.dark-mode .main-stats-grid .stat-value.hidden::after {
           </div>
         </div>
         
-<!-- Income Form Section -->
-<div class="form-section income-form-section" id="incomeFormSection">
-  <div class="form-header" onclick="toggleForm('incomeFormSection')">
-    <h3 class="form-title" id="incomeFormTitle"><i class="fas fa-money-bill-alt"></i> Add New Income</h3>
-    <i class="fas fa-chevron-up toggle-icon"></i>
-  </div>
-  <div class="form-body">
-    <div class="form-grid">
-      <div class="form-group">
-        <label><i class="fas fa-money-bill-wave"></i> Amount (UGX)</label>
-        <input type="number" id="incomeAmount" placeholder="e.g. 1000000" min="0" step="100" required>
-      </div>
-      <div class="form-group">
-        <label><i class="fas fa-briefcase"></i> Source</label>
-        <select id="incomeSource" required onchange="toggleRentalFields()">
-          <!-- RESTORED FULL INCOME SOURCES -->
-          <option value="Salary" selected>💼 Salary</option>
-          <option value="Freelance">💻 Freelance/Side-Hustle</option>
-          <option value="Investment">📈 Investment/Dividends</option>
-          <option value="Business">🏢 Business</option>
-          <option value="Gift">🎁 Gift</option>
-          <option value="Rental Income">🏠 Rental Income</option>
-          <option value="Bonus">💰 Bonus</option>
-          <option value="Commission">📊 Commission</option>
-          <option value="Allowances">🤑 Allowances</option>
-          <option value="Dividends">📈 Dividends</option>
-          <option value="Interest">💰 Interest Income</option>
-          <option value="Royalties">📚 Royalties</option>
-          <option value="Pension">👴 Pension</option>
-          <option value="Social Security">🏛️ Social Security</option>
-          <option value="Child Support">👶 Child Support</option>
-          <option value="Alimony">💔 Alimony</option>
-          <option value="Scholarship">🎓 Scholarship</option>
-          <option value="Grant">🏫 Grant</option>
-          <option value="Rebate">🔄 Rebate</option>
-          <option value="Refund">💸 Refund</option>
-          <option value="Lottery">🎰 Lottery/Winnings</option>
-          <option value="Inheritance">📜 Inheritance</option>
-          <option value="Sale">🏷️ Sale of Items</option>
-          <option value="Other">📦 Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label><i class="fas fa-calendar"></i> Date Received</label>
-        <input type="date" id="incomeDate" required onchange="updateRentalEndDate()">
-      </div>
-      
-      <!-- Rental-specific fields - hidden by default -->
-      <div class="form-group" id="rentalEndDateGroup" style="display: none;">
-        <label><i class="fas fa-calendar-times"></i> Rent End Date (30 days)</label>
-        <input type="date" id="rentalEndDate" placeholder="End date of rental period">
-      </div>
-      
-      <div class="form-group" id="rentalBalanceGroup" style="display: none;">
-        <label><i class="fas fa-balance-scale"></i> Rent Balance</label>
-        <select id="rentalBalance" onchange="toggleRentalBalanceInput()">
-          <option value="NIL">NIL</option>
-          <option value="Custom">Input Balance Amount</option>
-        </select>
-        <input type="number" id="rentalBalanceAmount" 
-               placeholder="Enter balance amount" 
-               style="display: none; margin-top: 8px;"
-               min="0" step="100">
-      </div>
-      
-      <div class="form-group">
-        <label><i class="fas fa-sticky-note"></i> Notes</label>
-        <input type="text" id="incomeNotes" placeholder="Source details or month">
-      </div>
-    </div>
-    <div class="btn-actions-container">
-      <button class="btn btn-success" id="addIncomeBtn" type="button" disabled><i class="fas fa-arrow-alt-circle-up"></i> Record Income</button>
-      <button class="btn btn-cancel" id="cancelIncomeBtn" style="display: none;"><i class="fas fa-times"></i> Cancel Edit</button>
-    </div>
-  </div>
-</div>
+        <div class="form-section income-form-section" id="incomeFormSection">
+          <div class="form-header" onclick="toggleForm('incomeFormSection')">
+            <h3 class="form-title" id="incomeFormTitle"><i class="fas fa-money-bill-alt"></i> Add New Income</h3>
+            <i class="fas fa-chevron-up toggle-icon"></i>
+          </div>
+          <div class="form-body">
+            <div class="form-grid">
+              <div class="form-group">
+                <label><i class="fas fa-money-bill-wave"></i> Amount (UGX)</label>
+                <input type="number" id="incomeAmount" placeholder="e.g. 1000000" min="0" step="100" required>
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-briefcase"></i> Source</label>
+                 <select id="incomeSource" required onchange="handleIncomeSourceChange()">
+                  <!-- RESTORED FULL INCOME SOURCES -->
+                  <option value="Salary" selected>💼 Salary</option>
+                  <option value="Freelance">💻 Freelance/Side-Hustle</option>
+                  <option value="Investment">📈 Investment/Dividends</option>
+                  <option value="Business">🏢 Business</option>
+                  <option value="Gift">🎁 Gift</option>
+                  <option value="Rental Income">🏠 Rental Income</option>
+                  <option value="Bonus">💰 Bonus</option>
+                  <option value="Commission">📊 Commission</option>
+				  <option value="Allowances">🤑 Allowances</option>
+                  <option value="Dividends">📈 Dividends</option>
+                  <option value="Interest">💰 Interest Income</option>
+                  <option value="Royalties">📚 Royalties</option>
+                  <option value="Pension">👴 Pension</option>
+                  <option value="Social Security">🏛️ Social Security</option>
+                  <option value="Child Support">👶 Child Support</option>
+                  <option value="Alimony">💔 Alimony</option>
+                  <option value="Scholarship">🎓 Scholarship</option>
+                  <option value="Grant">🏫 Grant</option>
+                  <option value="Rebate">🔄 Rebate</option>
+                  <option value="Refund">💸 Refund</option>
+                  <option value="Lottery">🎰 Lottery/Winnings</option>
+                  <option value="Inheritance">📜 Inheritance</option>
+                  <option value="Sale">🏷️ Sale of Items</option>
+                  <option value="Other">📦 Other</option>
+                </select>
+
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-calendar"></i> Date Received</label>
+                <input type="date" id="incomeDate" required onchange="updateRentEndDate()">
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-sticky-note"></i> Notes</label>
+                <input type="text" id="incomeNotes" placeholder="Source details or month">
+                              <!-- RENTAL INCOME SPECIFIC FIELDS -->
+              <div id="rentalIncomeFields" style="display: none; margin-top: 15px; padding-top: 15px; border-top: 2px solid var(--primary); grid-column: 1 / -1;">
+                <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 0.95rem;"><i class="fas fa-home"></i> Rental Income Details</h4>
+                
+                <div class="form-group" style="grid-column: 1 / 2;">
+                  <label> Rent End Date (Auto +30 days)</label>
+
+<input 
+  type="date" 
+  id="rentEndDate" 
+  style="
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 2px solid var(--success);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  "
+>
+<small style="display: block; margin-top: 5px; color: var(--text-secondary);">
+  Auto-calculated as 30 days after Date Received. Click to edit.
+</small>
+                </div>
+                
+                <div class="form-group" style="grid-column: 1 / 2;">
+                  <label><i class="fas fa-money-bill-wave"></i> Rent Balance</label>
+                  <select id="rentBalanceType" onchange="handleRentBalanceChange()" style="margin-bottom: 10px;">
+                    <option value="nil" selected>NIL</option>
+                    <option value="custom">Custom Amount</option>
+                  </select>
+                  <input type="number" id="rentBalanceAmount" placeholder="Balance amount (UGX)" min="0" style="display: none;">
+                </div>
+              </div>
+
+              </div>
+            </div>
+            <div class="btn-actions-container">
+              <button class="btn btn-success" id="addIncomeBtn" type="button" disabled><i class="fas fa-arrow-alt-circle-up"></i> Record Income</button>
+              <button class="btn btn-cancel" id="cancelIncomeBtn" style="display: none;"><i class="fas fa-times"></i> Cancel Edit</button>
+            </div>
+          </div>
+        </div>
         
         <!-- NEW: Budget Form Section -->
         <div class="form-section budget-form-section" id="budgetFormSection">
@@ -6286,7 +6133,7 @@ body.dark-mode .main-stats-grid .stat-value.hidden::after {
   <script>
     // ===== JAVASCRIPT =====
     // Firebase Configuration
-  const firebaseConfig = {
+   const firebaseConfig = {
   apiKey: "AIzaSyDda1g38Xmm0euvidr4FVe5HWcM9ozrMks",
   authDomain: "matsande-bd989.firebaseapp.com",
   projectId: "matsande-bd989",
@@ -6294,8 +6141,6 @@ body.dark-mode .main-stats-grid .stat-value.hidden::after {
   messagingSenderId: "1092457131514",
   appId: "1:1092457131514:web:8ad017b4ece06ef23e8843"
 };
-
-
     // Global variables
     let db = null;
     let auth = null;
@@ -6589,99 +6434,6 @@ function clearReminderForm() {
 }
 
 
-
-// ========== EXPENSE HANDLERS ==========
-
-
-// ========== INCOME HANDLERS ==========
-
-async function handleIncomeSubmit() {
-    if (!isFirestoreReady || !currentUser) {
-        showMessage('⏳ Please wait, app is still initializing...', 'warning');
-        return;
-    }
-    
-    const amount = parseFloat(document.getElementById('incomeAmount').value);
-    const sourceSelect = document.getElementById('incomeSource');
-    const sourceDisplay = sourceSelect.options[sourceSelect.selectedIndex].text;
-    const source = getSourceValue(sourceDisplay);
-    const date = document.getElementById('incomeDate').value;
-    const notes = document.getElementById('incomeNotes').value.trim();
-    
-    // Validation
- 
-    if (!source) {
-        showMessage('❌ Please select a source', 'error');
-        return;
-    }
-    if (!date) {
-        showMessage('❌ Please select a date', 'error');
-        return;
-    }
-    
-    // Disable button to prevent double submission
-    const addBtn = document.getElementById('addIncomeBtn');
-    addBtn.disabled = true;
-    addBtn.innerHTML = isEditingIncome ? 
-        '<i class="fas fa-spinner fa-spin"></i> Updating...' : 
-        '<i class="fas fa-spinner fa-spin"></i> Adding...';
-    
-    try {
-        const incomeData = {
-            amount: amount,
-            source: source,
-            sourceDisplay: sourceDisplay,
-            date: date,
-            notes: notes || 'No notes',
-            userId: currentUser.uid,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        };
-        
-        if (isEditingIncome && editingIncomeId) {
-            await db.collection('income').doc(editingIncomeId).update(incomeData);
-            showMessage('✅ Income updated successfully!', 'success');
-        } else {
-            await db.collection('income').add(incomeData);
-            showMessage('✅ Income added successfully!', 'success');
-        }
-        
-        // Clear the form after successful submission
-        clearIncomeForm();
-        
-        // Refresh data
-        setTimeout(() => {
-            loadAllData();
-        }, 500);
-        
-    } catch (error) {
-        console.error('Error saving income:', error);
-        showMessage('❌ Failed to save income: ' + error.message, 'error');
-    } finally {
-        addBtn.disabled = false;
-        addBtn.innerHTML = isEditingIncome ? 
-            '<i class="fas fa-save"></i> Update Income' : 
-            '<i class="fas fa-arrow-alt-circle-up"></i> Record Income';
-    }
-}
-
-
-
-// Make sure you're setting the value correctly when editing
-function populateEditForm(item, type) {
-    if (type === 'expense') {
-        document.getElementById('amount').value = item.amount || '';
-        document.getElementById('category').value = item.category || '';
-        document.getElementById('date').value = item.date || '';
-        document.getElementById('description').value = item.description || '';
-    }
-    
-    if (type === 'income') {
-        document.getElementById('incomeAmount').value = item.amount || '';
-        document.getElementById('incomeSource').value = item.source || '';
-        document.getElementById('incomeDate').value = item.date || '';
-        document.getElementById('incomeNotes').value = item.notes || '';
-    }
-}
 
 
 
@@ -7286,7 +7038,58 @@ async function loadAllData() {
 }
 
 
+  // ===== RENTAL INCOME HANDLERS =====
+    function handleIncomeSourceChange() {
+      const source = document.getElementById('incomeSource').value;
+      const rentalFields = document.getElementById('rentalIncomeFields');
+      
+      if (source === 'Rental Income') {
+        rentalFields.style.display = 'block';
+        updateRentEndDate();
+      } else {
+        rentalFields.style.display = 'none';
+        document.getElementById('rentBalanceType').value = 'nil';
+        document.getElementById('rentBalanceAmount').value = '';
+        document.getElementById('rentBalanceAmount').style.display = 'none';
+      }
+    }
 
+  function updateRentEndDate() {
+  const dateInput = document.getElementById('incomeDate').value;
+  const rentEndDateField = document.getElementById('rentEndDate');
+  
+  if (dateInput) {
+    const startDate = new Date(dateInput);
+    const endDate = new Date(startDate);
+    endDate.setDate(endDate.getDate() + 30);
+    const year = endDate.getFullYear();
+    const month = String(endDate.getMonth() + 1).padStart(2, '0');
+    const day = String(endDate.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+    
+    rentEndDateField.value = formattedDate;
+    
+    rentEndDateField.style.boxShadow = 'inset 0 0 8px rgba(78, 205, 196, 0.2)';
+    setTimeout(() => {
+      rentEndDateField.style.boxShadow = 'none';
+    }, 500);
+  }
+}
+
+
+    function handleRentBalanceChange() {
+      const type = document.getElementById('rentBalanceType').value;
+      const amountInput = document.getElementById('rentBalanceAmount');
+      
+      if (type === 'custom') {
+        amountInput.style.display = 'block';
+        amountInput.required = true;
+      } else {
+        amountInput.style.display = 'none';
+        amountInput.value = '';
+        amountInput.required = false;
+      }
+    }
 
 
 
@@ -7311,23 +7114,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Add this at the end of your initialization
-function attachFormEventListeners() {
-    // Expense Form
-    document.getElementById('addBtn').addEventListener('click', handleExpenseSubmit);
-    
-    // Income Form
-    document.getElementById('addIncomeBtn').addEventListener('click', handleIncomeSubmit);
-    
-    // Budget Form
-    document.getElementById('addBudgetBtn').addEventListener('click', handleBudgetSubmit);
-    
-    // Reminder Form
-    document.getElementById('addReminderBtn').addEventListener('click', handleReminderSubmit);
-}
-
-// Call this after Firebase initialization
-attachFormEventListeners();
 
 
 
@@ -7347,42 +7133,36 @@ function debounce(func, wait) {
     };
 }
 
-// Then modify your handlers
-const debouncedExpenseSubmit = debounce(handleExpenseSubmit, 500);
-const debouncedIncomeSubmit = debounce(handleIncomeSubmit, 500);
-
-// Update event listeners
-document.getElementById('addBtn').addEventListener('click', debouncedExpenseSubmit);
-document.getElementById('addIncomeBtn').addEventListener('click', debouncedIncomeSubmit);
 
 
-
-
-
-function handleExpenseSubmit(event) {
-    if (event) event.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+  const rentEndDateField = document.getElementById('rentEndDate');
+  
+  if (rentEndDateField) {
+    rentEndDateField.addEventListener('focus', function() {
+      this.style.borderColor = 'var(--primary)';
+      this.style.boxShadow = '0 0 8px rgba(255, 152, 0, 0.3)';
+    });
     
-    const addBtn = document.getElementById('addBtn');
-    
-    // Disable button to prevent double click
-    addBtn.disabled = true;
-    addBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Adding...';
-    
-    try {
-        // ... your existing code
-    } catch (error) {
-        console.error('Error:', error);
-    } finally {
-        // Re-enable button after 1 second
-        setTimeout(() => {
-            addBtn.disabled = false;
-            addBtn.innerHTML = '<i class="fas fa-plus"></i> Add Expense';
-        }, 1000);
-    }
-}
+    rentEndDateField.addEventListener('blur', function() {
+      this.style.borderColor = 'var(--success)';
+      this.style.boxShadow = 'none';
+    });
 
-
-
+    rentEndDateField.addEventListener('change', function() {
+      if (this.value) {
+        const date = new Date(this.value);
+        const dateStr = date.toLocaleDateString('en-US', { 
+          weekday: 'short', 
+          year: 'numeric', 
+          month: 'short', 
+          day: 'numeric' 
+        });
+        console.log('Rent End Date set to: ' + dateStr);
+      }
+    });
+  }
+});
 
 
 
@@ -7650,7 +7430,6 @@ function populateIncomeFilters() {
   });
 }
 
-// ===== FIXED: CONSISTENT INCOME RENDERING (USE THIS ONLY) =====
 function displayIncome(incomeArray) {
   const container = document.getElementById('incomeList');
   if (!container) return;
@@ -7675,6 +7454,14 @@ function displayIncome(incomeArray) {
     const notes = income.notes || '';
     const sourceClass = 'source-' + source.toLowerCase().replace(/\s+/g, '-').replace('/', '-');
 
+    // Build rental info ONLY for Rental Income
+    let rentalHTML = '';
+    if (source === 'Rental Income') {
+      const rd = income.rentEndDate || 'Not set';
+      const rb = income.rentBalanceType === 'custom' ? 'UGX ' + (income.rentBalance || 0).toLocaleString() : 'NIL';
+      rentalHTML = '<div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap;font-size:0.8rem"><span style="padding:5px 10px;border-radius:16px;color:#ff9800;border-left:2px solid #ff9800;font-weight:600">📅 ' + rd + '</span><span style="padding:5px 10px;border-radius:16px;color:#4caf50;border-left:2px solid #4caf50;font-weight:600">💰 ' + rb + '</span></div>';
+    }
+
     html += `
     <div class="income-item" data-id="${income.id}">
       <div class="item-content">
@@ -7683,6 +7470,7 @@ function displayIncome(incomeArray) {
         <span class="category-badge ${sourceClass}">
           <i class="fas fa-briefcase"></i> ${source}
         </span>
+        ${rentalHTML}
       </div>
       <div class="income-amount">UGX ${amount.toLocaleString('en-US')}</div>
       <div class="item-actions">
@@ -9057,59 +8845,10 @@ setInterval(fixIncomeListDOM, 1000); // Run every 1 second
       // Reset UI to add mode
       document.getElementById('incomeFormTitle').innerHTML = '<i class="fas fa-money-bill-alt"></i> Add New Income';
       document.getElementById('addIncomeBtn').innerHTML = '<i class="fas fa-arrow-alt-circle-up"></i> Record Income';
-      document.getElementById('addIncomeBtn').onclick = () => handleIncomeSubmit();
       document.getElementById('cancelIncomeBtn').style.display = 'none';
     }
     
-    // Updated handleIncomeSubmit function
-    async function handleIncomeSubmit() {
-      if (!currentUser || !isFirestoreReady) {
-        showMessage('⏳ Please wait, app is still initializing...', 'warning');
-        return;
-      }
-      
-      const amount = parseFloat(document.getElementById('incomeAmount').value);
-      const source = document.getElementById('incomeSource').value;
-      const date = document.getElementById('incomeDate').value;
-      const notes = document.getElementById('incomeNotes').value.trim();
-      
-    
-      
-      if (!date) {
-        showMessage('❌ Please select a date', 'error');
-        return;
-      }
-      
-      // Prepare income data
-      const incomeData = {
-        amount: amount,
-        source: source,
-        date: date,
-        notes: notes || 'No notes',
-        userId: currentUser.uid
-      };
-      
-      // Disable button to prevent double submission
-      const addBtn = document.getElementById('addIncomeBtn');
-      addBtn.disabled = true;
-      addBtn.innerHTML = isEditingIncome ? 
-        '<i class="fas fa-spinner fa-spin"></i> Updating...' : 
-        '<i class="fas fa-spinner fa-spin"></i> Adding...';
-      
-      try {
-        if (isEditingIncome && editingIncomeId) {
-          await updateIncome(editingIncomeId, incomeData);
-        } else {
-          await addIncome(incomeData);
-        }
-      } finally {
-        addBtn.disabled = false;
-        addBtn.innerHTML = isEditingIncome ? 
-          '<i class="fas fa-save"></i> Update Income' : 
-          '<i class="fas fa-arrow-alt-circle-up"></i> Record Income';
-      }
-    }
-    
+
     // Also add these event listeners to your setupEventListeners function:
     function setupEventListeners() {
       // Existing event listeners...
@@ -9257,359 +8996,8 @@ function getSourceDisplayName(sourceValue) {
 
 
 
-// Function to toggle rental fields based on income source
-function toggleRentalFields() {
-  const source = document.getElementById('incomeSource').value;
-  const rentalEndDateGroup = document.getElementById('rentalEndDateGroup');
-  const rentalBalanceGroup = document.getElementById('rentalBalanceGroup');
-  
-  if (source === 'Rental Income') {
-    rentalEndDateGroup.style.display = 'block';
-    rentalBalanceGroup.style.display = 'block';
-    
-    // Auto-populate rental end date (30 days from today or selected date)
-    updateRentalEndDate();
-  } else {
-    rentalEndDateGroup.style.display = 'none';
-    rentalBalanceGroup.style.display = 'none';
-  }
-}
-
-// Function to update rental end date (30 days from date received)
-function updateRentalEndDate() {
-  const source = document.getElementById('incomeSource').value;
-  const dateReceivedInput = document.getElementById('incomeDate');
-  const rentalEndDateInput = document.getElementById('rentalEndDate');
-  
-  // Only update if source is Rental Income and date received has a value
-  if (source === 'Rental Income' && dateReceivedInput.value) {
-    const dateReceived = new Date(dateReceivedInput.value);
-    
-    // Add 30 days to the date received
-    const rentalEndDate = new Date(dateReceived);
-    rentalEndDate.setDate(rentalEndDate.getDate() + 30);
-    
-    // Format the date as YYYY-MM-DD for the input field
-    const formattedDate = rentalEndDate.toISOString().split('T')[0];
-    rentalEndDateInput.value = formattedDate;
-  }
-}
-
-// Function to toggle rental balance input field
-function toggleRentalBalanceInput() {
-  const rentalBalanceSelect = document.getElementById('rentalBalance');
-  const rentalBalanceAmount = document.getElementById('rentalBalanceAmount');
-  
-  if (rentalBalanceSelect.value === 'Custom') {
-    rentalBalanceAmount.style.display = 'block';
-    rentalBalanceAmount.required = true;
-  } else {
-    rentalBalanceAmount.style.display = 'none';
-    rentalBalanceAmount.required = false;
-    rentalBalanceAmount.value = '';
-  }
-}
-
-// Set default date to today for date received
-window.addEventListener('DOMContentLoaded', function() {
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('incomeDate').value = today;
-  
-  // Initialize form validation for addIncomeBtn
-  const incomeAmount = document.getElementById('incomeAmount');
-  const incomeSource = document.getElementById('incomeSource');
-  const incomeDate = document.getElementById('incomeDate');
-  const addIncomeBtn = document.getElementById('addIncomeBtn');
-  
-  function validateIncomeForm() {
-    if (incomeAmount.value && incomeSource.value && incomeDate.value) {
-      addIncomeBtn.disabled = false;
-    } else {
-      addIncomeBtn.disabled = true;
-    }
-  }
-  
-  incomeAmount.addEventListener('input', validateIncomeForm);
-  incomeSource.addEventListener('change', validateIncomeForm);
-  incomeDate.addEventListener('change', validateIncomeForm);
-  
-  // Initial validation
-  validateIncomeForm();
-});
 
 
-// Function to save rental balance for a specific month
-async function saveRentalBalance(monthYear, balanceAmount) {
-    if (!currentUser) return;
-    
-    try {
-        const rentalBalanceDoc = {
-            userId: currentUser.uid,
-            monthYear: monthYear, // Format: "YYYY-MM"
-            balanceAmount: balanceAmount,
-            type: 'rental_balance',
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-        };
-        
-        // Check if rental balance already exists for this month
-        const existingQuery = await db.collection('rentalBalances')
-            .where('userId', '==', currentUser.uid)
-            .where('monthYear', '==', monthYear)
-            .limit(1)
-            .get();
-        
-        if (!existingQuery.empty) {
-            // Update existing balance
-            const docId = existingQuery.docs[0].id;
-            await db.collection('rentalBalances').doc(docId).update({
-                balanceAmount: balanceAmount,
-                updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-            });
-        } else {
-            // Create new balance record
-            await db.collection('rentalBalances').add(rentalBalanceDoc);
-        }
-        
-        console.log(`Rental balance saved for ${monthYear}: ${balanceAmount}`);
-    } catch (error) {
-        console.error('Error saving rental balance:', error);
-        showMessage('Error saving rental balance: ' + error.message, 'error');
-    }
-}
-
-// Function to get rental balance for a specific month
-async function getRentalBalance(monthYear) {
-    if (!currentUser) return 0;
-    
-    try {
-        const query = await db.collection('rentalBalances')
-            .where('userId', '==', currentUser.uid)
-            .where('monthYear', '==', monthYear)
-            .limit(1)
-            .get();
-        
-        if (!query.empty) {
-            const data = query.docs[0].data();
-            return data.balanceAmount || 0;
-        }
-        return 0;
-    } catch (error) {
-        console.error('Error getting rental balance:', error);
-        return 0;
-    }
-}
-
-// Function to get all rental balances for income report
-async function getAllRentalBalances(startDate, endDate) {
-    if (!currentUser) return [];
-    
-    try {
-        const query = await db.collection('rentalBalances')
-            .where('userId', '==', currentUser.uid)
-            .orderBy('monthYear')
-            .get();
-        
-        const balances = [];
-        query.forEach(doc => {
-            const data = doc.data();
-            const balanceDate = new Date(data.monthYear + '-01');
-            
-            // Filter by date range if provided
-            if ((!startDate || balanceDate >= startDate) && (!endDate || balanceDate <= endDate)) {
-                balances.push({
-                    id: doc.id,
-                    ...data,
-                    date: balanceDate,
-                    amount: data.balanceAmount
-                });
-            }
-        });
-        
-        return balances;
-    } catch (error) {
-        console.error('Error getting rental balances:', error);
-        return [];
-    }
-}
-
-// Modify the income saving function to handle rental income
-async function saveIncome(incomeData, isEdit = false, editId = null) {
-    try {
-        let rentalBalanceAmount = 0;
-        let rentalMonthYear = null;
-        
-        // Handle rental-specific fields
-        if (incomeData.source === 'Rental Income') {
-            const rentalBalance = document.getElementById('rentalBalance').value;
-            
-            if (rentalBalance === 'Custom') {
-                rentalBalanceAmount = parseInt(document.getElementById('rentalBalanceAmount').value) || 0;
-            } else if (rentalBalance === 'NIL') {
-                rentalBalanceAmount = 0;
-            }
-            
-            // Extract month-year from income date
-            const incomeDate = new Date(incomeData.date);
-            rentalMonthYear = `${incomeDate.getFullYear()}-${String(incomeDate.getMonth() + 1).padStart(2, '0')}`;
-            
-            // Save rental balance for the month
-            if (rentalBalanceAmount > 0) {
-                await saveRentalBalance(rentalMonthYear, rentalBalanceAmount);
-            }
-            
-            // Add rental end date if provided
-            const rentalEndDate = document.getElementById('rentalEndDate').value;
-            if (rentalEndDate) {
-                incomeData.rentalEndDate = rentalEndDate;
-            }
-            
-            incomeData.rentalBalance = rentalBalanceAmount;
-            incomeData.rentalMonthYear = rentalMonthYear;
-        }
-        
-        // Add type field for filtering
-        incomeData.type = 'income';
-        
-        if (isEdit && editId) {
-            // Update existing income
-            await db.collection('expenses').doc(editId).update({
-                ...incomeData,
-                updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-            });
-            showMessage('Income updated successfully!', 'success');
-        } else {
-            // Add new income
-            await db.collection('expenses').add({
-                ...incomeData,
-                userId: currentUser.uid,
-                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-            });
-            showMessage('Income recorded successfully!', 'success');
-        }
-        
-        // Reset form and update displays
-        resetIncomeForm();
-        updateAllDisplays();
-        updateCharts();
-        
-    } catch (error) {
-        console.error('Error saving income:', error);
-        showMessage('Error saving income: ' + error.message, 'error');
-    }
-}
-
-// Modify income report generation to include rental balances
-async function generateReport(period, type, element) {
-    try {
-        // Get rental balances for the period
-        const rentalBalances = await getAllRentalBalances();
-        
-        // Calculate total rental balance for the period
-        let totalRentalBalance = 0;
-        if (period === 'month') {
-            const currentDate = new Date();
-            const currentMonthYear = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}`;
-            totalRentalBalance = await getRentalBalance(currentMonthYear);
-        } else if (period === 'year') {
-            const currentDate = new Date();
-            const yearStart = new Date(currentDate.getFullYear(), 0, 1);
-            const yearEnd = new Date(currentDate.getFullYear(), 11, 31);
-            const yearBalances = await getAllRentalBalances(yearStart, yearEnd);
-            totalRentalBalance = yearBalances.reduce((sum, balance) => sum + (balance.amount || 0), 0);
-        }
-        
-        // Add rental balance to report
-        const reportResults = document.getElementById(type === 'income' ? 'incomeReportResults' : 'expenseReportResults');
-        
-        // In your existing report generation code, add:
-        let rentalBalanceHTML = '';
-        if (type === 'income' && totalRentalBalance > 0) {
-            rentalBalanceHTML = `
-                <div class="report-summary-item" style="border-left: 4px solid #ff9800;">
-                    <div class="label">Rental Balances</div>
-                    <div class="value" style="color: #ff9800;">UGX ${totalRentalBalance.toLocaleString()}</div>
-                    <div style="font-size: 0.7rem; color: var(--gray);">Unpaid rent amounts</div>
-                </div>
-            `;
-        }
-        
-        // Insert this HTML into your report summary
-        // You'll need to modify your existing report generation to include this
-        
-    } catch (error) {
-        console.error('Error generating report:', error);
-        showMessage('Error generating report: ' + error.message, 'error');
-    }
-}
-
-// Function to display rental balance in income items
-function createIncomeItemHTML(doc) {
-    const data = doc.data();
-    const date = data.date ? new Date(data.date.seconds * 1000).toLocaleDateString() : 'No date';
-    const amount = data.amount || 0;
-    const source = data.source || 'Unknown';
-    const notes = data.notes || '';
-    const rentalBalance = data.rentalBalance || 0;
-    const rentalEndDate = data.rentalEndDate ? new Date(data.rentalEndDate).toLocaleDateString() : '';
-    
-    let rentalHTML = '';
-    if (source === 'Rental Income') {
-        rentalHTML = `
-            <div style="display: flex; gap: 8px; margin-top: 3px; font-size: 0.7rem;">
-                ${rentalBalance > 0 ? `<span style="color: var(--warning); font-weight: 600;">
-                    <i class="fas fa-money-bill-wave"></i> Balance: UGX ${rentalBalance.toLocaleString()}
-                </span>` : ''}
-                ${rentalEndDate ? `<span style="color: var(--gray);">
-                    <i class="fas fa-calendar-times"></i> Ends: ${rentalEndDate}
-                </span>` : ''}
-            </div>
-        `;
-    }
-    
-    return `
-        <div class="income-item" data-id="${doc.id}">
-            <div class="item-content">
-                <strong>${date}</strong>
-                <div>
-                    <span class="category-badge source-${source.toLowerCase().replace(/\s+/g, '-')}">
-                        <i class="fas fa-briefcase"></i> ${source}
-                    </span>
-                    ${notes ? `<span style="color: var(--gray);">${notes}</span>` : ''}
-                </div>
-                ${rentalHTML}
-            </div>
-            <div class="income-amount">UGX ${amount.toLocaleString()}</div>
-            <div class="item-actions">
-                <button class="action-btn edit" onclick="editIncome('${doc.id}')">
-                    <i class="fas fa-edit"></i>
-                </button>
-                <button class="action-btn delete" onclick="showDeleteModal('${doc.id}', 'income')">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </div>
-        </div>
-    `;
-}
-
-// Initialize rental fields on page load
-document.addEventListener('DOMContentLoaded', function() {
-    // Add event listener to income source dropdown
-    const incomeSourceSelect = document.getElementById('incomeSource');
-    if (incomeSourceSelect) {
-        incomeSourceSelect.addEventListener('change', toggleRentalFields);
-    }
-    
-    // Add event listener to rental balance dropdown
-    const rentalBalanceSelect = document.getElementById('rentalBalance');
-    if (rentalBalanceSelect) {
-        rentalBalanceSelect.addEventListener('change', function() {
-            const rentalBalanceAmount = document.getElementById('rentalBalanceAmount');
-            rentalBalanceAmount.style.display = this.value === 'Custom' ? 'block' : 'none';
-        });
-    }
-});
 
 
 
@@ -10063,13 +9451,17 @@ function getCategoryValue(displayName) {
             stats.year += expenseAmount;
           }
           
-          // Category breakdown
-          const category = expense.category || 'Other';
-          categories[category] = (categories[category] || 0) + expenseAmount;
+         // Category breakdown - ONLY THIS MONTH
+          if (expenseDate >= monthStart && expenseDate <= monthEnd) {
+            const category = expense.category || 'Other';
+            categories[category] = (categories[category] || 0) + expenseAmount;
+          }
           
-          // Weekly data
-          const dayOfWeek = expenseDate.getDay();
-          weeklyData[dayOfWeek] += expenseAmount;
+          // Weekly data - ONLY THIS WEEK
+          if (expenseDate >= weekStart && expenseDate <= weekEnd) {
+            const dayOfWeek = expenseDate.getDay();
+            weeklyData[dayOfWeek] += expenseAmount;
+          }
         });
         
         // Process income
@@ -10191,7 +9583,19 @@ function loadIncomeList(incomeData = allIncome) {
     });
     
     // Determine source badge class
+   // Determine source badge class
     const sourceClass = 'source-' + source.toLowerCase().replace(/\s+/g, '-').replace('/', '-');
+    
+    // Build rental info ONLY for Rental Income
+    let rentalInfoHTML = '';
+    if (source === 'Rental Income') {
+      const rentEndDate = income.rentEndDate || 'Not set';
+      const rentBalance = income.rentBalanceType === 'custom' ? 'UGX ' + (income.rentBalance || 0).toLocaleString() : 'NIL';
+      rentalInfoHTML = '<div style="display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; align-items: center; font-size: 0.8rem;">' +
+        '<span style="background: linear-gradient(135deg, rgba(255, 152, 0, 0.2), rgba(255, 152, 0, 0.1)); color: #ff9800; padding: 5px 10px; border-radius: 16px; font-weight: 600; border-left: 2px solid #ff9800;">📅 End: ' + rentEndDate + '</span>' +
+        '<span style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(76, 175, 80, 0.1)); color: #4caf50; padding: 5px 10px; border-radius: 16px; font-weight: 600; border-left: 2px solid #4caf50;">💰 ' + rentBalance + '</span>' +
+        '</div>';
+    }
     
     html += `
       <div class="income-item" id="income-${income.id}">
@@ -10201,7 +9605,9 @@ function loadIncomeList(incomeData = allIncome) {
           <span class="category-badge ${sourceClass}">
             <i class="fas fa-briefcase"></i> ${source}
           </span>
+          ${rentalInfoHTML}
         </div>
+        <div class="income-amount">UGX ${amount.toLocaleString()}</div>
         <div class="item-actions">
           <button class="action-btn edit" onclick="editIncome('${income.id}')" title="Edit">
             <i class="fas fa-edit"></i>
@@ -11069,6 +10475,25 @@ function updateIncomeList(incomeArray = allIncome) {
         });
         const sourceClass = 'source-' + income.source.toLowerCase().replace(/ /g, '-');
         
+        let rentalInfoHTML = '';
+        if (income.source === 'Rental Income') {
+          const rentEndDate = income.rentEndDate || 'Not set';
+          const rentBalance = income.rentBalanceType === 'custom' 
+            ? `UGX ${(income.rentBalance || 0).toLocaleString()}` 
+            : 'NIL';
+          
+          rentalInfoHTML = `
+            <div style="display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; align-items: center; font-size: 0.8rem;">
+              <span style="background: linear-gradient(135deg, rgba(255, 152, 0, 0.2) 0%, rgba(255, 152, 0, 0.1) 100%); color: #ff9800; padding: 5px 10px; border-radius: 16px; font-weight: 600; border-left: 2px solid #ff9800;">
+                📅 End: ${rentEndDate}
+              </span>
+              <span style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.2) 0%, rgba(76, 175, 80, 0.1) 100%); color: #4caf50; padding: 5px 10px; border-radius: 16px; font-weight: 600; border-left: 2px solid #4caf50;">
+                💰 ${rentBalance}
+              </span>
+            </div>
+          `;
+        }
+
         html += `
             <div class="income-item" id="income-${income.id}">
                 <div class="item-content">
@@ -11077,15 +10502,17 @@ function updateIncomeList(incomeArray = allIncome) {
                         <span class="category-badge ${sourceClass}"><i class="fas fa-${getSourceIcon(income.source)}"></i> ${income.source}</span>
                     </div>
                     <div>${income.notes || ''}</div>
+                    ${rentalInfoHTML}
                 </div>
                 <div class="income-amount">UGX ${income.amount.toLocaleString()}</div>
                 <div class="item-actions">
-                    <button class="action-btn edit" onclick="editIncome('${income.id}')"><i class="fas fa-edit"></i></button>
+                    <button class="action-btn edit" onclick="editIncome('${income.id}', '${income.amount}', '${income.source}', '${income.date}', '${(income.notes || '').replace(/'/g, "\\'")}', '${income.rentEndDate || ''}', '${income.rentBalanceType || ''}', ${income.rentBalance || 0})"><i class="fas fa-edit"></i></button>
                     <button class="action-btn delete" onclick="showDeleteModal('${income.id}', 'income')"><i class="fas fa-trash"></i></button>
                 </div>
             </div>
         `;
     });
+
 
     incomeListDiv.innerHTML = html;
 }
@@ -12307,21 +11734,32 @@ setInterval(resetBalanceStyles, 30000); // Every 30 seconds
     }
 
     // ===== EXPENSE FUNCTIONS =====
-    async function handleExpenseSubmit() {
+ async function handleExpenseSubmit() {
   if (!isFirestoreReady || !currentUser) {
     showError('Database not ready. Please wait...');
     return;
   }
-
-  const amount = parseFloat(document.getElementById('amount').value);
+  let amountInput = document.getElementById('amount').value || '';
+  // Remove any commas, spaces, or special characters from the amount
+  amountInput = amountInput.toString().trim().replace(/[^0-9.]/g, '');
+  const amount = parseFloat(amountInput);
   const categorySelect = document.getElementById('category');
   const categoryDisplay = categorySelect.options[categorySelect.selectedIndex].text;
-  const category = getCategoryValue(categoryDisplay); // Convert display name to value
+  const category = getCategoryValue(categoryDisplay);
   const date = document.getElementById('date').value;
   const description = document.getElementById('description').value.trim();
 
-  if (!amount || amount <= 0) {
-    showError('Please enter a valid amount');
+ console.log('====== EXPENSE VALIDATION DETAILED ======');
+console.log('Step 1 - Raw field value:', document.getElementById('amount').value);
+console.log('Step 2 - After toString():', document.getElementById('amount').value.toString());
+console.log('Step 3 - After trim():', document.getElementById('amount').value.toString().trim());
+console.log('Step 4 - After replace():', amountInput);
+console.log('Step 5 - parseFloat(amountInput):', amount);
+console.log('Step 6 - !amountInput:', !amountInput, ', isNaN(amount):', isNaN(amount), ', amount <= 0:', amount <= 0);
+console.log('=======================================');
+
+  if (!amountInput || isNaN(amount) || amount <= 0) {
+    showError('❌ Please enter a valid amount');
     return;
   }
   if (!category) {
@@ -12340,8 +11778,8 @@ setInterval(resetBalanceStyles, 30000); // Every 30 seconds
   try {
     const expenseData = addUserData({
       amount: amount,
-      category: category, // Store as value (e.g., "Gifts" not "🎁 Gifts")
-      categoryDisplay: categoryDisplay, // Also store the display version
+      category: category,
+      categoryDisplay: categoryDisplay,
       date: date,
       description: description,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
@@ -12376,7 +11814,7 @@ setInterval(resetBalanceStyles, 30000); // Every 30 seconds
     function prepareEditExpense(id, amount, category, date, description) {
       isEditingExpense = true; 
       editingExpenseId = id;
-      document.getElementById('amount').value = amount; 
+      document.getElementById('amount').value = String(amount); 
       document.getElementById('category').value = category;
       document.getElementById('date').value = date; 
       document.getElementById('description').value = description;
@@ -12741,16 +12179,27 @@ function displayExpenses(expenses) {
         showError('Please login first'); 
         return; 
       }
-      
-      const amount = document.getElementById('incomeAmount').value.trim();
-      const source = document.getElementById('incomeSource').value;
-      const date = document.getElementById('incomeDate').value;
-      const notes = document.getElementById('incomeNotes').value.trim();
+let amountInput = document.getElementById('incomeAmount').value || '';
+// Remove any commas, spaces, or special characters from the amount
+amountInput = amountInput.toString().trim().replace(/[^0-9.]/g, '');
+const amount = parseFloat(amountInput);
+const source = document.getElementById('incomeSource').value;
+const date = document.getElementById('incomeDate').value;
+const notes = document.getElementById('incomeNotes').value.trim();
 
-      if (!amount || parseFloat(amount) <= 0) { 
-        showError('Please enter a valid income amount'); 
-        return; 
-      }
+console.log('====== INCOME VALIDATION DETAILED ======');
+console.log('Step 1 - Raw field value:', document.getElementById('incomeAmount').value);
+console.log('Step 2 - After toString():', document.getElementById('incomeAmount').value.toString());
+console.log('Step 3 - After trim():', document.getElementById('incomeAmount').value.toString().trim());
+console.log('Step 4 - After replace():', amountInput);
+console.log('Step 5 - parseFloat(amountInput):', amount);
+console.log('Step 6 - !amountInput:', !amountInput, ', isNaN(amount):', isNaN(amount), ', amount <= 0:', amount <= 0);
+console.log('=======================================');
+
+if (!amountInput || isNaN(amount) || amount <= 0) { 
+  showError('❌ Please enter a valid income amount'); 
+  return; 
+}
       if (!date) { 
         showError('Please select an income date'); 
         return; 
@@ -12767,24 +12216,43 @@ function displayExpenses(expenses) {
           date, 
           notes: notes || ''
         });
-
-        if (isEditingIncome && editingIncomeId) {
-          // Update existing income
-          incomeData.updatedAt = new Date().toISOString();
-          await db.collection('income').doc(editingIncomeId).update(incomeData);
-          showMessage(`✅ Income updated successfully!`, 'success');
-          cancelEditIncome();
-        } else {
-          // Add new income
-          await db.collection('income').add(incomeData);
-          showMessage(`💰 Recorded ${formatCurrency(amount)} from ${source}`, 'success');
+        
+         // Add rental-specific fields if source is Rental Income
+        if (source === 'Rental Income') {
+          const rentEndDateValue = document.getElementById('rentEndDate').value;
+          const rentBalanceType = document.getElementById('rentBalanceType').value;
           
-          // Clear form but keep the date for adding another entry
-          document.getElementById('incomeAmount').value = ''; 
-          document.getElementById('incomeNotes').value = '';
-          document.getElementById('incomeSource').value = 'Salary'; 
-          // Keep the selected date for next entry
+          incomeData.rentEndDate = rentEndDateValue;
+          incomeData.rentBalanceType = rentBalanceType;
+          incomeData.rentBalance = (rentBalanceType === 'custom') 
+            ? (parseFloat(document.getElementById('rentBalanceAmount').value) || 0)
+            : 0;
         }
+
+    if (isEditingIncome && editingIncomeId) {
+      // Update existing income
+      incomeData.updatedAt = new Date().toISOString();
+      await db.collection('income').doc(editingIncomeId).update(incomeData);
+      showMessage(`✅ Income updated successfully!`, 'success');
+      isEditingIncome = false;
+      editingIncomeId = null;
+      document.getElementById('incomeAmount').value = ''; 
+      document.getElementById('incomeNotes').value = '';
+      document.getElementById('incomeSource').value = 'Salary'; 
+      document.getElementById('incomeDate').value = new Date().toISOString().split('T')[0];
+      document.getElementById('incomeFormTitle').innerHTML = '<i class="fas fa-money-bill-alt"></i> Add New Income';
+      document.getElementById('cancelIncomeBtn').style.display = 'none';
+    } else {
+      // Add new income
+      await db.collection('income').add(incomeData);
+      showMessage(`💰 Recorded ${formatCurrency(amount)} from ${source}`, 'success');
+      
+      // Clear form but keep the date for adding another entry
+      document.getElementById('incomeAmount').value = ''; 
+      document.getElementById('incomeNotes').value = '';
+      document.getElementById('incomeSource').value = 'Salary'; 
+      // Keep the selected date for next entry
+   }
         
         // Refresh reports
         if (currentReportPeriod.income) {
@@ -12800,10 +12268,11 @@ function displayExpenses(expenses) {
       }
     }
 
-    function prepareEditIncome(id, amount, source, date, notes) {
+
+    function prepareEditIncome(id, amount, source, date, notes, rentEndDate = '', rentBalanceType = '', rentBalance = 0) {
       isEditingIncome = true; 
       editingIncomeId = id;
-      document.getElementById('incomeAmount').value = amount; 
+      document.getElementById('incomeAmount').value = String(amount); 
       document.getElementById('incomeSource').value = source;
       document.getElementById('incomeDate').value = date; 
       document.getElementById('incomeNotes').value = notes;
@@ -12811,23 +12280,33 @@ function displayExpenses(expenses) {
       document.getElementById('addIncomeBtn').innerHTML = '<i class="fas fa-save"></i> Update Income';
       document.getElementById('cancelIncomeBtn').style.display = 'inline-flex';
       
+      // Handle rental income fields
+      const rentalFields = document.getElementById('rentalIncomeFields');
+      if (source === 'Rental Income') {
+        rentalFields.style.display = 'block';
+        document.getElementById('rentEndDate').value = rentEndDate || '';
+        
+        const rentBalanceTypeSelect = document.getElementById('rentBalanceType');
+        const rentBalanceAmountInput = document.getElementById('rentBalanceAmount');
+        
+        rentBalanceTypeSelect.value = rentBalanceType || 'nil';
+        
+        if (rentBalanceType === 'custom') {
+          rentBalanceAmountInput.style.display = 'block';
+          rentBalanceAmountInput.value = rentBalance || 0;
+        } else {
+          rentBalanceAmountInput.style.display = 'none';
+          rentBalanceAmountInput.value = '';
+        }
+      } else {
+        rentalFields.style.display = 'none';
+      }
+      
       const formSection = document.getElementById('incomeFormSection');
       formSection.classList.remove('collapsed');
       formSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-    function cancelEditIncome() {
-      isEditingIncome = false; 
-      editingIncomeId = null;
-      document.getElementById('incomeAmount').value = ''; 
-      document.getElementById('incomeNotes').value = '';
-      document.getElementById('incomeSource').value = 'Salary'; 
-      // Reset to today's date when canceling edit
-      document.getElementById('incomeDate').value = new Date().toISOString().split('T')[0];
-      document.getElementById('incomeFormTitle').innerHTML = '<i class="fas fa-money-bill-alt"></i> Add New Income';
-      document.getElementById('addIncomeBtn').innerHTML = '<i class="fas fa-arrow-alt-circle-up"></i> Record Income';
-      document.getElementById('cancelIncomeBtn').style.display = 'none';
-    }
     
     // ===== BUDGET FUNCTIONS =====
     async function handleBudgetSubmit() {
@@ -13541,13 +13020,13 @@ function populateIncomeFilters() {
       try { 
         const dateRange = getDateRange(period); 
         if (!dateRange) return; 
-        await fetchAndDisplayReport(dateRange.startDate, dateRange.endDate, dateRange.periodLabel, reportType); 
+       await fetchAndDisplayReport(dateRange.startDate, dateRange.endDate, dateRange.periodLabel, reportType, period);
       }
       catch (error) { showError(`Failed to generate ${reportType} report: ` + error.message); }
     }
 
     // FIXED: Improved date comparison logic for old data
-    async function fetchAndDisplayReport(startDate, endDate, periodLabel, reportType) {
+    async function fetchAndDisplayReport(startDate, endDate, periodLabel, reportType, period) {
       const resultsContainer = document.getElementById(`${reportType}ReportResults`);
       const actionsContainer = document.getElementById(`${reportType}ReportActions`);
       resultsContainer.innerHTML = '<div class="loading"><div class="spinner"></div><p>Generating report...</p></div>';
@@ -13630,12 +13109,58 @@ function populateIncomeFilters() {
           html += `</div>`;
           
           html += `<div style="margin-top:20px;"><h5 style="color: var(--gray); font-size: 0.9rem; margin-bottom:10px;">${reportType.charAt(0).toUpperCase() + reportType.slice(1)} Details</h5>`;
-          items.forEach(item => { 
+       items.forEach(item => { 
             const name = reportType === 'expense' ? (item.category || 'Other') : (item.source || 'Other');
             const description = reportType === 'expense' ? item.description : item.notes;
             const amountClass = reportType === 'expense' ? 'expense-amount' : 'income-amount';
             const displayDate = getFormattedDate(item);
-            html += `<div class="expense-item" style="padding: 10px; border-bottom: 1px solid #eee;"><div class="item-content"><span style="font-weight:600; font-size:0.9rem;">${displayDate}</span><span style="margin-left:10px; color:var(--gray); font-size:0.85rem;">${name}</span></div><div class="expense-amount ${amountClass}" style="font-size:1rem; color:${breakdownColor}; -webkit-text-fill-color: initial;">${formatCurrency(item.amount)}</div></div>`; 
+            
+          let rentalInfo = '';
+            if (reportType === 'income' && name === 'Rental Income') {
+              const rentEndDate = item.rentEndDate || 'Not set';
+              const rentBalance = item.rentBalanceType === 'custom' 
+                ? formatCurrency(item.rentBalance || 0)
+                : 'NIL';
+              
+              rentalInfo = `
+                <div style="background: linear-gradient(135deg, rgba(78, 205, 196, 0.12) 0%, rgba(78, 205, 196, 0.05) 100%); padding: 12px 14px; border-radius: 8px; margin-top: 10px; border-left: 4px solid var(--success); border-top: 1px solid rgba(78, 205, 196, 0.2);">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 8px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="font-size: 0.7rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">📅 Received</span>
+                      <span style="background: rgba(78, 205, 196, 0.2); color: var(--text-color); padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">${displayDate}</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="font-size: 0.7rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">📍 End Date</span>
+                      <span style="background: rgba(78, 205, 196, 0.2); color: var(--text-color); padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">${rentEndDate}</span>
+                    </div>
+                  </div>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="font-size: 0.7rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">💰 Balance</span>
+                      <span style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.2) 0%, rgba(76, 175, 80, 0.1) 100%); color: var(--success); padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">${rentBalance}</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="font-size: 0.7rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">📝 Property</span>
+                      <span style="background: rgba(100, 100, 100, 0.1); color: var(--text-color); padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${item.notes || '-'}</span>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }
+
+            
+            html += `
+              <div class="expense-item" style="padding: 10px; border-bottom: 1px solid #eee;">
+                <div class="item-content">
+                  <span style="font-weight:600; font-size:0.9rem;">${displayDate}</span>
+                  <span style="margin-left:10px; color:var(--gray); font-size:0.85rem;">${name}</span>
+                </div>
+                <div class="expense-amount ${amountClass}" style="font-size:1rem; color:${breakdownColor}; -webkit-text-fill-color: initial;">
+                  ${formatCurrency(item.amount)}
+                </div>
+                ${rentalInfo}
+              </div>
+            `;
           });
           html += `</div>`;
 
@@ -13643,7 +13168,62 @@ function populateIncomeFilters() {
             html += `<div class="empty-state"><h4>No ${reportType} transactions found for ${periodLabel}</h4></div>`;
         }
 
-        resultsContainer.innerHTML = html; 
+ resultsContainer.innerHTML = html;
+        
+        // Update charts when expense report changes
+// Update charts when expense report changes
+        if (reportType === 'expense') {
+          let barData, barLabels, barLabel;
+          
+          // Determine chart type based on period
+          if (period === 'today' || period === 'yesterday' || period === 'week') {
+            // Weekly bar chart (days of week)
+            barData = Array(7).fill(0);
+            barLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            barLabel = 'Daily Expenses';
+            items.forEach(expense => {
+              const expenseDate = getDateFromExpense(expense);
+              const dayOfWeek = expenseDate.getDay();
+              barData[dayOfWeek] += parseFloat(expense.amount) || 0;
+            });
+          } else if (period === 'month' || period === 'lastMonth') {
+            // Monthly bar chart (weeks)
+            barData = Array(5).fill(0); // Up to 5 weeks in a month
+            barLabels = ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'];
+            barLabel = 'Weekly Expenses';
+            items.forEach(expense => {
+              const expenseDate = getDateFromExpense(expense);
+              const weekOfMonth = Math.floor((expenseDate.getDate() - 1) / 7);
+              if (weekOfMonth < 5) {
+                barData[weekOfMonth] += parseFloat(expense.amount) || 0;
+              }
+            });
+          } else if (period === 'year') {
+            // Yearly bar chart (months)
+            barData = Array(12).fill(0);
+            barLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            barLabel = 'Monthly Expenses';
+            items.forEach(expense => {
+              const expenseDate = getDateFromExpense(expense);
+              const month = expenseDate.getMonth();
+              barData[month] += parseFloat(expense.amount) || 0;
+            });
+          } else {
+            // Default to weekly for custom ranges
+            barData = Array(7).fill(0);
+            barLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            barLabel = 'Daily Expenses';
+            items.forEach(expense => {
+              const expenseDate = getDateFromExpense(expense);
+              const dayOfWeek = expenseDate.getDay();
+              barData[dayOfWeek] += parseFloat(expense.amount) || 0;
+            });
+          }
+          
+          // Update both charts with the filtered data
+          updateCharts(breakdown, barData, barLabels, barLabel);
+        }
+        
         if (count > 0) actionsContainer.style.display = 'flex';
         showMessage(`📊 ${reportType.charAt(0).toUpperCase() + reportType.slice(1)} Report generated for ${periodLabel}`, 'success');
       } catch (error) { 
@@ -13685,7 +13265,7 @@ function populateIncomeFilters() {
       
       currentReportPeriod[reportType] = 'custom';
       
-      await fetchAndDisplayReport(startDate, endDate, `Custom Range (${startDate.toLocaleDateString('en-UG')} - ${endDate.toLocaleDateString('en-UG')})`, reportType);
+      await fetchAndDisplayReport(startDate, endDate, `Custom Range (${startDate.toLocaleDateString('en-UG')} - ${endDate.toLocaleDateString('en-UG')})`, reportType, 'custom');
     }
 
     // ===== EXPORT FUNCTIONS =====
@@ -14706,7 +14286,7 @@ function showYearlyOverview() {
       previousStats = stats;
     }
 
-    function updateCharts(categories, weeklyData) {
+    function updateCharts(categories, barData, barLabels, barLabel) {
       const pieCtx = document.getElementById('pieChart')?.getContext('2d');
       const barCtx = document.getElementById('barChart')?.getContext('2d');
       
@@ -14738,14 +14318,14 @@ function showYearlyOverview() {
         });
       }
       
-      if (barChart) barChart.destroy();
+if (barChart) barChart.destroy();
       barChart = new Chart(barCtx, { 
         type: 'bar', 
         data: { 
-          labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], 
+          labels: barLabels || ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], 
           datasets: [{ 
-            label: 'Expenses', 
-            data: weeklyData, 
+            label: barLabel || 'Expenses', 
+            data: barData, 
             backgroundColor: 'rgba(255, 152, 0, 0.7)',
             borderColor: 'rgba(255, 152, 0, 1)',
             borderWidth: 1
@@ -14800,7 +14380,7 @@ function showYearlyOverview() {
             </div>
             <div class="expense-amount">${formatCurrency(expense.amount)}</div>
             <div class="item-actions">
-              <button class="action-btn edit" onclick="prepareEditExpense('${expense.id}', ${expense.amount}, '${category}', '${expense.date || ''}', '${descSafe}')">
+              <button class="action-btn edit" onclick="prepareEditExpense('${expense.id}', '${expense.amount}', '${category}', '${expense.date || ''}', '${descSafe}')"
                 <i class="fas fa-edit"></i>
               </button>
               <button class="action-btn delete" onclick="confirmDeleteModal('${expense.id}', 'expenses', '${category} - ${formatCurrency(expense.amount)}')">
@@ -14898,7 +14478,7 @@ function showYearlyOverview() {
     </div>
     <div class="expense-amount income-amount">${formatCurrency(inc.amount)}</div>
     <div class="item-actions">
-      <button class="action-btn edit" onclick="prepareEditIncome('${inc.id}', ${inc.amount}, '${source}', '${inc.date || ''}', '${notesSafe}')">
+      <button class="action-btn edit" onclick="prepareEditIncome('${inc.id}', '${inc.amount}', '${source}', '${inc.date || ''}', '${notesSafe}')">
         <i class="fas fa-edit"></i>
       </button>
       <button class="action-btn delete" onclick="confirmDeleteModal('${inc.id}', 'income', '${source} - ${formatCurrency(inc.amount)}')">
@@ -15010,7 +14590,7 @@ function showYearlyOverview() {
         const title = isExpense ? 'Expense Report' : 'Income Report';
         const totalLabel = isExpense ? 'Total Expenses' : 'Total Income';
         const breakdownTitle = isExpense ? 'Category Breakdown' : 'Source Breakdown';
-        const detailHeaders = isExpense ? ['Date', 'Category', 'Description', 'Amount'] : ['Date', 'Source', 'Notes', 'Amount'];
+        let detailHeaders = isExpense ? ['Date', 'Category', 'Description', 'Amount'] : ['Date', 'Source', 'Notes', 'Amount', 'Rent End Date', 'Balance'];
         const tableColor = isExpense ? [220, 53, 69] : [40, 167, 69];
 
         doc.setFontSize(18); 
@@ -15062,18 +14642,32 @@ function showYearlyOverview() {
             doc.text('Detailed Transactions', 20, yPos); 
             yPos += 10;
             
-            const detailTable = reportData.items.map(item => {
+           const detailTable = reportData.items.map(item => {
                 const name = isExpense ? (item.category || 'Other') : (item.source || 'Other');
                 const description = isExpense ? (item.description || '-') : (item.notes || '-');
                 const displayDate = getFormattedDate(item);
-                return [
+                const row = [
                   displayDate, 
                   name, 
                   description, 
                   formatCurrency(item.amount || 0)
                 ];
+                
+                // Add rental details if rental income
+                if (!isExpense && name === 'Rental Income') {
+                  const rentEndDate = item.rentEndDate || 'Not set';
+                  const rentBalance = item.rentBalanceType === 'custom' 
+                    ? formatCurrency(item.rentBalance || 0)
+                    : 'NIL';
+                  row.push(rentEndDate);
+                  row.push(rentBalance);
+                } else if (!isExpense) {
+                  row.push('');
+                  row.push('');
+                }
+                
+                return row;
             });
-            
             doc.autoTable({ 
               startY: yPos, 
               head: [detailHeaders], 
